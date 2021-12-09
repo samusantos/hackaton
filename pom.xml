@@ -17,6 +17,12 @@
 
   <dependencies>
 
+    <dependency>
+      <groupId>com.h2database</groupId>
+      <artifactId>h2</artifactId>
+      <version>1.4.196</version>
+    </dependency>
+
     <!-- Test if it's needed -->
     <dependency>
       <groupId>junit</groupId>

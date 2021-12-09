@@ -14,5 +14,5 @@
     <context:component-scan base-package="org.academiadecodigo.loopeytunes.sqlinhas"/>
 
     <import resource="persistence.xml"/>
-
+    <import resource="presentation.xml"/>
 </beans>

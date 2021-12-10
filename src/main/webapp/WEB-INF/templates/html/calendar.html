@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <thymeleaf th:replace="header :: header" />
+    <meta charset="UTF-8">
+    <title>Calendar</title>
+    <link rel="stylesheet" href="profile.css">
+    <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js">
+    </script>
+    <link href='fullcalendar/main.css' rel='stylesheet' />
+    <script src='fullcalendar/main.js'></script>
+</head>
+<body>
+<script>
+
+    var clickDates = [];
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+
+            initialView: 'dayGridMonth',
+            dateClick: function(info) {
+                alert('Clicked on: ' + info.dateStr);
+
+                //delete after dev
+                alert('Coordinates: ' + info.jsEvent.pageX + ',' + info.jsEvent.pageY);
+                alert('Current view: ' + info.view.type);
+
+                // change the day's background color just for fun
+                info.dayEl.style.backgroundColor = 'red';
+            }
+
+        });
+        calendar.render();
+    });
+
+</script>
+</body>
+</html>

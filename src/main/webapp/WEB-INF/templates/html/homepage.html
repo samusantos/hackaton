@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <thymeleaf th:replace="header :: header" />
+    <meta charset="UTF-8">
+    <title>Profile</title>
+    <link rel="stylesheet" type="text/css" href="homepage.css">
+    <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js">
+    </script>
+</head>
+<body>
+<h1 id="title">Welcome User</h1>
+<div id="centro">
+    <div id="menu">Menu
+
+        <button class="openCalendar" onclick="">Calendar</button>
+        <button>Godfather</button>
+        <button>Meetings</button>
+    </div>
+    <div class="progress">Progress
+        <div id='calendar'>
+
+        </div>
+    </div>
+    <div class="extra">Extra
+
+    </div>
+</div>
+</body>
+<script rel="js" type="text/javascript" th:src="homepage.js">
+
+</script>
+</html>

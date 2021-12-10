@@ -27,27 +27,32 @@ public class RestCustomerController {
         this.authService = authService;
     }
 
+    @Autowired
+    public void setDtoMapper(DtoMapper dtoMapper) {
+        this.dtoMapper = dtoMapper;
+    }
+
     @RequestMapping(method = RequestMethod.GET, value = {"/", ""})
     public String login(Model model) {
 
         model.addAttribute("user",new UserDto());
-        return "login";
+        return "html/login";
     }
 
     @RequestMapping(method = RequestMethod.POST, value = {"/", ""})
     public String authentication(@Valid @ModelAttribute("user") UserDto userDto, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
 
         if (bindingResult.hasErrors()) {
-            return "login";
+            return "html/login";
         }
 
         User user = dtoMapper.dtoToUser(userDto);
 
         if (authService.authenticate(user.getEmail(), user.getPassword())) {
-            return "homepage";
+            return "html/homepage";
         }
         redirectAttributes.addFlashAttribute("lastAction", "Email or password does not match our database\nPlease, try again");
-        return "redirect:/login";
+        return "html/login";
     }
 
 }

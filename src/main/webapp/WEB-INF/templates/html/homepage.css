@@ -1,0 +1,20 @@
+#centro{
+    display: flex;
+    justify-content: space-around;
+}
+
+#title{
+    display: flex;
+    justify-content: center;
+}
+
+#menu{
+    display: flex;
+    flex-direction: column;
+}
+
+#extra{
+    display: flex;
+    justify-content: end;
+}
+

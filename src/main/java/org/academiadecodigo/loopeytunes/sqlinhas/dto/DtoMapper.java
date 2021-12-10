@@ -9,6 +9,8 @@ public class DtoMapper {
 
         user.setEmail(dto.getEmail());
         user.setPassword(dto.getPassword());
+        user.setId(dto.getId());
+        user.setMessage(dto.getMessage());
 
         return user;
     }

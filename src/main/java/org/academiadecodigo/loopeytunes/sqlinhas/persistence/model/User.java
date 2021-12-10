@@ -9,11 +9,39 @@ public class User {
     @Id
     private String email;
 
+    private Integer id;
     private String password;
     private Date lastDrink;
 
+    @Transient
+    private String message;
+
     @Version
     private Integer version;
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public Integer getVersion() {
+        return version;
+    }
+
+    public void setVersion(Integer version) {
+        this.version = version;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getEmail() {
         return email;

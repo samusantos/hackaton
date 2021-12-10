@@ -27,10 +27,15 @@ public class RestCustomerController {
         this.authService = authService;
     }
 
+    @Autowired
+    public void setDtoMapper(DtoMapper dtoMapper) {
+        this.dtoMapper = dtoMapper;
+    }
+
     @RequestMapping(method = RequestMethod.GET, value = {"/", ""})
     public String login(Model model) {
 
-        model.addAttribute("user",new UserDto());
+        model.addAttribute("user", new UserDto());
         return "login";
     }
 
@@ -44,10 +49,18 @@ public class RestCustomerController {
         User user = dtoMapper.dtoToUser(userDto);
 
         if (authService.authenticate(user.getEmail(), user.getPassword())) {
-            return "homepage";
+            return "html/homepage";
         }
         redirectAttributes.addFlashAttribute("lastAction", "Email or password does not match our database\nPlease, try again");
-        return "redirect:/login";
+        return "login";
     }
+
+    @RequestMapping(method = RequestMethod.GET, value = {"/chat/global"})
+    public String getChat(){
+        return "html/chat";
+    }
+
+    @RequestMapping(method = RequestMethod.POST, value="/update")
+    public void
 
 }

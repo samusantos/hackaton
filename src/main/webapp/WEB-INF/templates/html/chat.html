@@ -2,16 +2,17 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head lang="en">
     <thymeleaf th:replace="header :: header"/>
-    <link th:href="homepage.css" rel="stylesheet"/>
 </head>
 <body>
-<div id="display"></div>
-<div id="prompt">
-    <form id="input">
-        <label for="textInput">Insert Message: </label>
-        <input id="textInput" type="text"/>
-        <button id="button">Send message</button>
-    </form>
+<div id="chatDisplay" style="justify-content: center; align-items: center">
+    <div id="display" style="display: block;min-height: 80%"></div>
+    <div id="prompt">
+        <form id="input" style="width: 80%">
+            <label for="textInput">Insert Message: </label>
+            <input id="textInput" type="text"/>
+            <button id="button">Send message</button>
+        </form>
+    </div>
 </div>
 
 </body>

@@ -61,6 +61,8 @@ public class RestCustomerController {
     }
 
     @RequestMapping(method = RequestMethod.POST, value="/update")
-    public void
+    public void updateDate(){
+
+    }
 
 }
